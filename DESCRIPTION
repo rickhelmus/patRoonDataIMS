@@ -1,0 +1,20 @@
+Package: patRoonDataIMS
+Type: Package
+Title: Example IMS-HRMS Data For The patRoon Package 
+Version: 1.0.0
+Authors@R: c(
+    person("Rick", "Helmus", email = "r.helmus@uva.nl", role = c("aut", "cre")),
+    person("Specker", "Jan", role = "aut"),
+    person("Aguilar-Alarcón", "Patricia", role = "aut"))
+Description: This package contains IMS-HRMS data from a triplicate analysis of
+  a standard mixture with various contaminants and a triplicate analysis of a
+  blank solvent (positive and negative mode). The data is meant as a
+  demonstration for the patRoon package.
+Suggests: patRoon
+License: CC0
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.2
+URL: https://github.com/rickhelmus/patRoonDataIMS
+BugReports: https://github.com/rickhelmus/patRoonDataIMS/issues
+Depends: R (>= 4.0.0)
