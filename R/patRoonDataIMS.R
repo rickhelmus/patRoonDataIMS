@@ -28,9 +28,9 @@ assertPolarity <- function(polarity)
 exampleDataPath <- function(polarity = "positive", type = "ims")
 {
     assertPolarity(polarity)
-    if (!identical(type, "ims") && !identical(type, "centroid"))
-        stop("type should be either 'ims' or 'centroid'", call. = FALSE)
-    return(file.path(getOption("patRoonDataIMS.path"), type, polarity)) # UNDONE
+    if (!identical(type, "raw") && !identical(type, "ims") && !identical(type, "centroid"))
+        stop("type should be either 'raw', 'ims' or 'centroid'", call. = FALSE)
+    return(file.path(getOption("patRoonDataIMS.path"), polarity, type)) # UNDONE
     system.file(file.path("extdata", type, if (polarity == "positive") "pos" else "neg"), package = "patRoonDataIMS")
 }
 
@@ -46,6 +46,7 @@ exampleAnalysisInfo <- function(polarity = "positive")
     suffix <- if (polarity == "positive") "pos" else "neg"
     ret <- patRoon::generateAnalysisInfo(fromCentroid = exampleDataPath(polarity, "centroid"),
                                          fromIMS = exampleDataPath(polarity, "ims"),
+                                         fromRaw = exampleDataPath(polarity, "raw"),
                                          replicate = c(rep(paste0("blank-", suffix), 3),
                                                        rep(paste0("standard-", suffix), 3)),
                                          blank = paste0("blank-", suffix))
