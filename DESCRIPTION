@@ -14,7 +14,7 @@ Suggests: patRoon
 License: CC0
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 URL: https://github.com/rickhelmus/patRoonDataIMS
 BugReports: https://github.com/rickhelmus/patRoonDataIMS/issues
 Depends: R (>= 4.0.0)

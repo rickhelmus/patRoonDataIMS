@@ -74,3 +74,24 @@ NULL
 #' @rdname suspects
 "suspectsNeg"
 
+#' Example internal standard lists
+#'
+#' The \code{ISTDListPos} and \code{ISTDListNeg} datasets are example lists with internal standards for a set of
+#' environmental contaminants (measured in positive and negative ionization, respectively). The datasets can be directly
+#' used with the \code{\link[patRoon]{normInts}} function.
+#'
+#' @format A \code{data.frame} with column \code{name}, \code{formula} and \code{rt}, specifying the analyte name,
+#'   formula and retention time (in seconds), respectively.
+#' @name ISTDList
+#' @author Jan C. Specker, Patricia Aguilar-Alarcón and Rick Helmus
+#' @keywords datasets
+#' @seealso \link{suspects}
+NULL
+
+#' @aliases ISTDListPos
+#' @rdname ISTDList
+"ISTDListPos"
+
+#' @aliases ISTDListNeg
+#' @rdname ISTDList
+"ISTDListNeg"

@@ -1,11 +1,12 @@
 devtools::load_all(".")
 
-# UNDONE
-suspectsPos <- suspectsNeg <- data.frame()
-# suspectsPos <- read.csv(system.file("data-raw", "suspects-pos.csv", package = "patRoonDataIMS"), stringsAsFactors = FALSE)
-# suspectsNeg <- read.csv(system.file("data-raw", "suspects-neg.csv", package = "patRoonDataIMS"), stringsAsFactors = FALSE)
+suspectsPos <- read.csv(file.path("data-raw", "suspects-pos.csv"), check.names = FALSE)
+suspectsNeg <- read.csv(file.path("data-raw", "suspects-neg.csv"), check.names = FALSE)
 
-usethis::use_data(suspectsPos, suspectsNeg, overwrite = TRUE)
+ISTDListPos <- read.csv(file.path("data-raw", "istds-pos.csv"), check.names = FALSE)
+ISTDListNeg <- read.csv(file.path("data-raw", "istds-neg.csv"), check.names = FALSE)
+
+usethis::use_data(suspectsPos, suspectsNeg, ISTDListPos, ISTDListNeg, overwrite = TRUE)
 
 for (pol in c("positive", "negative"))
 {
