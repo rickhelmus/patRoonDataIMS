@@ -6,6 +6,11 @@ suspectsNeg <- read.csv(file.path("data-raw", "suspects-neg.csv"), check.names =
 ISTDListPos <- read.csv(file.path("data-raw", "istds-pos.csv"), check.names = FALSE)
 ISTDListNeg <- read.csv(file.path("data-raw", "istds-neg.csv"), check.names = FALSE)
 
+suspectsPos <- assignMobilities(suspectsPos, CCSParams = getCCSParams("mason-schamp_1/k"))
+suspectsNeg <- assignMobilities(suspectsNeg, CCSParams = getCCSParams("mason-schamp_1/k"))
+ISTDListPos <- assignMobilities(ISTDListPos, CCSParams = getCCSParams("mason-schamp_1/k"))
+ISTDListNeg <- assignMobilities(ISTDListNeg, CCSParams = getCCSParams("mason-schamp_1/k"))
+
 usethis::use_data(suspectsPos, suspectsNeg, ISTDListPos, ISTDListNeg, overwrite = TRUE)
 
 for (pol in c("positive", "negative"))
