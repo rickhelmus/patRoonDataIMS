@@ -21,5 +21,5 @@ for (pol in c("positive", "negative"))
     patRoon::convertMSFiles(ai, formatFrom = "bruker_ims", typeTo = "ims", overwrite = TRUE,
                             algorithm = "timsconvert")
     patRoon::convertMSFiles(ai, formatFrom = "bruker_ims", typeTo = "centroid", overwrite = TRUE,
-                            algorithm = "im_collapse", includeMSMS = TRUE)
+                            algorithm = "timsconvert")
 }

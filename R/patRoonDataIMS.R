@@ -30,8 +30,7 @@ exampleDataPath <- function(polarity = "positive", type = "ims")
     assertPolarity(polarity)
     if (!identical(type, "raw") && !identical(type, "ims") && !identical(type, "centroid"))
         stop("type should be either 'raw', 'ims' or 'centroid'", call. = FALSE)
-    return(file.path(getOption("patRoonDataIMS.path"), polarity, type)) # UNDONE
-    system.file(file.path("extdata", type, if (polarity == "positive") "pos" else "neg"), package = "patRoonDataIMS")
+    system.file(file.path("extdata", polarity, type), package = "patRoonDataIMS")
 }
 
 #' @details \code{exampleAnalysisInfo} is a helper function that generate analysis information that can be directly used

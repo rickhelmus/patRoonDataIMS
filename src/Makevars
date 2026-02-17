@@ -1,0 +1,9 @@
+all: clean download
+
+download:
+	"${R_HOME}/bin${R_ARCH_BIN}/Rscript" --vanilla -e 'source("../tools/download.R", chdir = TRUE)'
+
+clean:
+	rm -rf ../inst/extdata
+
+.PHONY: all clean download
